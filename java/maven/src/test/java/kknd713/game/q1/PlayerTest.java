@@ -6,6 +6,7 @@ import static org.mockito.Mockito.*;
 import java.io.PrintStream;
 
 import kknd713.game.q1.entity.Player;
+import kknd713.game.q1.util.FightUtils;
 
 import org.junit.Test;
 
@@ -13,15 +14,12 @@ public class PlayerTest {
 	@Test
 	public void testAttack(){
 		PrintStream out = mock(PrintStream.class);
-		Player p1 = new Player("Jack", 10, 100, out);
-		Player p2 = new Player("Rose", 10, 100, out);
+		Player p1 = new Player("Jack", 10, 100);
+		Player p2 = new Player("Rose", 10, 100);
 		
-		while(true){
-			p1.attack(p2);
-			if (p2.getHp() == 0) {
-				verify(out).println(p2.getName()+"被打败了!");
-				break;
-			}
-		}
+		new FightUtils(out).fight(p1, p2);
+		
+		verify(out).println("Rose被打败了!");
+		
 	}
 }

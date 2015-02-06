@@ -6,7 +6,7 @@ public class Player {
 	private String name;
 	private int ap;
 	private int hp;
-	private PrintStream out;
+	private boolean alive = true;
 	
 	public String getName() {
 		return name;
@@ -26,12 +26,19 @@ public class Player {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
-	public Player(String name, int ap, int hp, PrintStream out) {
+	
+	
+	public boolean isAlive() {
+		return alive;
+	}
+	public void setAlive(boolean alive) {
+		this.alive = alive;
+	}
+	public Player(String name, int ap, int hp) {
 		super();
 		this.name = name;
 		this.ap = ap;
 		this.hp = hp;
-		this.out = out;
 	}
 	
 	public Player() {
@@ -41,12 +48,9 @@ public class Player {
 	
 	public void attack(Player other){
 		int hp = other.getHp() - this.ap;
-		System.out.println(hp);
 		other.setHp(hp);
-		if (hp <= 0) {
-			hp = 0;
-			other.setHp(hp);
-			out.println(other.getName() + "被打败了!");
+		if (hp < 0) {
+			other.setHp(0);
 		}
 	}
 }
