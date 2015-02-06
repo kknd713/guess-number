@@ -1,10 +1,10 @@
-package kknd713.game.q3.util;
+package kknd713.game.q4.util;
 
 import static org.mockito.Mockito.verify;
 
 import java.io.PrintStream;
 
-import kknd713.game.q3.entity.Sprite;
+import kknd713.game.q4.entity.Sprite;
 
 public class FightUtils {
 	private PrintStream out;
