@@ -69,9 +69,9 @@ public abstract class Sprite {
 		this.hp = hp;
 	}
 	
-	public String useWeapon(){
+	/*public String useWeapon(){
 		return weapon == null ? "" : "用" + weapon.getName();
-	}
+	}*/
 	
 	
 	public Sprite(String name, int ap, int hp, Weapon weapon,

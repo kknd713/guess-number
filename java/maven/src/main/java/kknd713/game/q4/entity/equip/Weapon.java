@@ -8,6 +8,20 @@ import java.util.Random;
 import kknd713.game.q4.entity.effect.Effect;
 
 public class Weapon {
+	
+	//空对象设计方法
+	public static final Weapon NULL_WEAPON = new Weapon(){
+		public String useWeapon(){
+			return "";
+		}
+	};
+	
+	public String useWeapon(){
+		return "用" + getName();
+	}
+	
+	
+	
 	private int ap;
 	private String name;
 	private List<Effect> effects = new ArrayList<Effect>();

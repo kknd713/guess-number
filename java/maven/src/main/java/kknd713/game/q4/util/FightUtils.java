@@ -21,7 +21,7 @@ public class FightUtils {
 			//战士张三用优质木棒攻击了普通人李四,李四受到了8点伤害,李四剩余生命：12
 			out.printf("%s%s%s攻击了%s%s,%s受到了%d点伤害,%s剩余生命:%d",
 					attacker.getJobName(),attacker.getName(),
-					attacker.useWeapon(),defender.getJobName(),
+					attacker.getWeapon().useWeapon(),defender.getJobName(),
 					defender.getName(), defender.getName(),harm,
 					defender.getName(), hp);
 			

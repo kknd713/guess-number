@@ -10,13 +10,12 @@ import kknd713.game.q4.entity.effect.Effect;
  *
  */
 public class DebuffEffect extends Effect{
-
+	
 	public DebuffEffect(Debuff debuff) {
 		super(debuff, 0.25);
 	}
 
 	public int handle(Sprite self, Sprite other) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
